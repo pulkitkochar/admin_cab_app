@@ -1,0 +1,28 @@
+<h1>Listing posts</h1>
+
+        <ol>
+            <li>user id</li>
+            <li>title</li>
+            <li>body</li>
+            <li>time of post</li>
+        </ol>
+
+
+<% @posts.each do |post| %>
+<ul>
+    <li><%= post.user_id %></li>
+    <li><%= post.title %></li>
+    <li><%= post.body %></li>
+    <li><%= post.time %></li>
+</ul>
+    <%= link_to 'Show', post %>
+    <%= link_to 'Edit', edit_post_path(post) %>
+    <%= link_to 'Destroy', post, :method => :delete,  :confirm => 'Are you sure?'  %>
+
+<% end %>
+
+        <br/>
+        <br/>
+
+
+<%= link_to 'New Post', new_post_path %>
